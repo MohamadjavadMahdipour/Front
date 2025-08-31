@@ -4,12 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slott Clone</title>
-
-  <!-- Manifest -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#f39c12">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-mode">
@@ -33,9 +27,10 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Play Exciting Casino Games</h1>
-      <p>Join and get exclusive welcome bonuses!</p>
+      <p>Join now and get exclusive bonuses!</p>
       <button class="accent">Start Playing</button>
     </div>
   </section>
@@ -50,9 +45,21 @@
   <section id="promotions" class="promotions">
     <h2>Special Promotions</h2>
     <div class="promo-grid">
-      <div class="promo-card">🎁 Welcome Bonus</div>
-      <div class="promo-card">🔥 Weekly Tournaments</div>
-      <div class="promo-card">💎 VIP Rewards</div>
+      <div class="promo-card">
+        <div class="promo-icon">🎁</div>
+        <h3>Welcome Bonus</h3>
+        <p>Get 100% bonus on your first deposit!</p>
+      </div>
+      <div class="promo-card">
+        <div class="promo-icon">🔥</div>
+        <h3>Weekly Tournaments</h3>
+        <p>Compete every week for top prizes!</p>
+      </div>
+      <div class="promo-card">
+        <div class="promo-icon">💎</div>
+        <h3>VIP Rewards</h3>
+        <p>Exclusive rewards for VIP members!</p>
+      </div>
     </div>
   </section>
 
@@ -90,21 +97,10 @@
         <input type="password" placeholder="Password" required>
         <button type="submit" class="accent">Submit</button>
       </form>
+      <p class="switch-modal">Don't have an account? <span id="switchToRegister">Register</span></p>
     </div>
   </div>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
-
-  <!-- Service Worker -->
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("sw.js")
-          .then(reg => console.log("Service Worker registered:", reg))
-          .catch(err => console.error("SW registration failed:", err));
-      });
-    }
-  </script>
 </body>
 </html>
