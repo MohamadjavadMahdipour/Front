@@ -4,16 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Slott Clone</title>
-  <link rel="stylesheet" href="style.css">
 
   <!-- Manifest -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#f39c12">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Header -->
+<body class="dark-mode">
+
+  <!-- HEADER -->
   <header>
-    <div class="logo">Slott Clone</div>
+    <div class="logo">Slott<span>Clone</span></div>
     <nav>
       <ul>
         <li><a href="#games">Games</a></li>
@@ -21,29 +24,31 @@
         <li><a href="#support">Support</a></li>
       </ul>
     </nav>
-    <div class="auth-buttons">
+    <div class="header-buttons">
+      <button id="toggleTheme">🌙</button>
       <button id="loginBtn">Login</button>
       <button id="registerBtn" class="accent">Register</button>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero">
-    <div>
-      <h1>Welcome to Slott Clone</h1>
-      <p>Play the best online games anytime, anywhere!</p>
+    <div class="hero-content">
+      <h1>Play Exciting Casino Games</h1>
+      <p>Join and get exclusive welcome bonuses!</p>
+      <button class="accent">Start Playing</button>
     </div>
   </section>
 
-  <!-- Games -->
+  <!-- GAMES -->
   <section id="games" class="games">
-    <h2>Popular Games</h2>
+    <h2>Our Games</h2>
     <div id="gameGrid" class="game-grid"></div>
   </section>
 
-  <!-- Promotions -->
+  <!-- PROMOTIONS -->
   <section id="promotions" class="promotions">
-    <h2>Promotions</h2>
+    <h2>Special Promotions</h2>
     <div class="promo-grid">
       <div class="promo-card">🎁 Welcome Bonus</div>
       <div class="promo-card">🔥 Weekly Tournaments</div>
@@ -51,7 +56,7 @@
     </div>
   </section>
 
-  <!-- Support -->
+  <!-- SUPPORT -->
   <section id="support" class="support">
     <h2>Support</h2>
     <form id="supportForm">
@@ -62,7 +67,7 @@
     </form>
   </section>
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Slott Clone. All rights reserved.</p>
     <nav>
@@ -75,13 +80,13 @@
     </div>
   </footer>
 
-  <!-- Auth Modal -->
+  <!-- MODAL -->
   <div id="authModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2 id="authTitle">Login</h2>
       <form>
-        <input type="text" placeholder="Username" required>
+        <input type="email" placeholder="Email" required>
         <input type="password" placeholder="Password" required>
         <button type="submit" class="accent">Submit</button>
       </form>
@@ -91,13 +96,13 @@
   <!-- Scripts -->
   <script src="script.js"></script>
 
-  <!-- Register Service Worker -->
+  <!-- Service Worker -->
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         navigator.serviceWorker.register("sw.js")
-          .then(reg => console.log("✅ Service Worker registered:", reg))
-          .catch(err => console.error("❌ SW registration failed:", err));
+          .then(reg => console.log("Service Worker registered:", reg))
+          .catch(err => console.error("SW registration failed:", err));
       });
     }
   </script>
